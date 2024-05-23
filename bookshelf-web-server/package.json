@@ -1,0 +1,33 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/main.js",
+  "type": "module",
+  "scripts": {
+    "tsc:watch": "tsc --watch",
+    "dev": "concurrently npm:tsc:watch nodemon ./build/main.js",
+    "build": "rimraf build && tsc",
+    "start:node": "NODE_ENV=production node ./build/main.js",
+    "start": "npm run build && npm run start:node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "nodemonConfig": {
+    "ignore": ["*.json"]
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "nanoid": "^5.0.7",
+    "rimraf": "^5.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "chalk": "^5.3.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {}
+}
